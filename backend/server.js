@@ -20,7 +20,7 @@ app.use(helmet());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://meditrack1.onrender.com' }));
 
 
 const port = process.env.PORT || 7777; 
