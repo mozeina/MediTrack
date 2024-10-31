@@ -122,9 +122,9 @@ function GettingStarted() {
             let usersLevel = await axios.get("https://meditrack-bw3b.onrender.com/level/check-level", { withCredentials: true });
             if (usersLevel.data) {
                 navigate("/profile");
-            } else return;
+            }
         } catch (err) {
-            navigate("/login");
+            return 
         }
     };
 
