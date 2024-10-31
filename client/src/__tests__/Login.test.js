@@ -50,7 +50,7 @@ describe("login", () => {
         })
 
         it("shows success message when login is successful", async () => {
-            mock.onPost("http://localhost:7777/users/login").reply(200, { "message": "logged in suc" });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/login").reply(200, { "message": "logged in suc" });
 
             act(() => {
                 render(
@@ -116,7 +116,7 @@ describe("login", () => {
 
         it("shows error when user doesn't exist", async () => {
 
-            mock.onPost("http://localhost:7777/users/login").reply(404, { "error": "user not exist" });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/login").reply(404, { "error": "user not exist" });
 
             act(() => {
                 render(
@@ -147,7 +147,7 @@ describe("login", () => {
 
         it("shows error when incorrect password", async () => {
 
-            mock.onPost("http://localhost:7777/users/login").reply(401, { "error": "incorrect pass" });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/login").reply(401, { "error": "incorrect pass" });
 
             act(() => {
                 render(

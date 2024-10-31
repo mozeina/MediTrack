@@ -43,7 +43,7 @@ function Login() {
         const { email, password } = formValues;
 
         try {
-            await axios.post("http://localhost:7777/users/login", {
+            await axios.post("https://meditrack-bw3b.onrender.com/users/login", {
                 email, password
             }, { withCredentials: true });
             setFormSuccess("Login successful"); 

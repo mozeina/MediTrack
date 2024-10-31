@@ -12,7 +12,7 @@ function LatestSession() {
     const getLatestSession = async () => {
         
         try {
-            let latestSession = await axios.get("http://localhost:7777/session/get-latest-session", { withCredentials: true });
+            let latestSession = await axios.get("https://meditrack-bw3b.onrender.com/session/get-latest-session", { withCredentials: true });
             if (latestSession.data.minutes == 0) {
                 setLatestSession("You have no previous sessions.");
                 setLatestSessionLoading(false);

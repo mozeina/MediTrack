@@ -16,7 +16,7 @@ function MonthlyProgress() {
 
     const getMonthlyProgress = async () => {
         try {
-            let progress = await axios.get("http://localhost:7777/session/get-monthly-progress", { withCredentials: true });
+            let progress = await axios.get("https://meditrack-bw3b.onrender.com/session/get-monthly-progress", { withCredentials: true });
             setMonthlyProgressObj(progress.data);
             setError(false);
         } catch (err) {

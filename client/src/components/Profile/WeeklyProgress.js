@@ -16,7 +16,7 @@ function WeeklyProgress() {
 
     const getWeeklyProgress = async () => {
         try {
-            let progress = await axios.get("http://localhost:7777/session/get-weekly-progress", { withCredentials: true });
+            let progress = await axios.get("https://meditrack-bw3b.onrender.com/session/get-weekly-progress", { withCredentials: true });
             //here the indexes 0-6 in the array represent the days of the week starting from monday, and the values are the minutes for each day.
             setWeeklyProgress(Object.values(progress.data).slice(0, day ? day : 7));
             setError(false);

@@ -50,7 +50,7 @@ function Signup() {
         }
 
         try {
-            await axios.post("http://localhost:7777/users/register", {
+            await axios.post("https://meditrack-bw3b.onrender.com/users/register", {
                 username, email, password
             }, { withCredentials: true })
             setFormSuccess("Account created successfully.");

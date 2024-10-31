@@ -46,7 +46,7 @@ function GettingStarted() {
     const getUsernameFromDatabase = async () => {
         if (!username) {
             try {
-                let username = await axios.get("http://localhost:7777/users/get-username", { withCredentials: true });
+                let username = await axios.get("https://meditrack-bw3b.onrender.com/users/get-username", { withCredentials: true });
                 dispatch(setUsername(username.data));
             } catch (err) {
                 dispatch(setUsername("User"));
@@ -103,7 +103,7 @@ function GettingStarted() {
 
     const setLevel = async level => {
         try {
-            await axios.post("http://localhost:7777/level/set-level", { level }, { withCredentials: true });
+            await axios.post("https://meditrack-bw3b.onrender.com/level/set-level", { level }, { withCredentials: true });
             navigate("/profile");
         } catch (err) {
             if (err.response?.status == 500) {
@@ -119,7 +119,7 @@ function GettingStarted() {
 
     const levelExistsCheck = async () => {
         try {
-            let usersLevel = await axios.get("http://localhost:7777/level/check-level", { withCredentials: true });
+            let usersLevel = await axios.get("https://meditrack-bw3b.onrender.com/level/check-level", { withCredentials: true });
             if (usersLevel.data) {
                 navigate("/profile");
             } else return;
@@ -130,7 +130,7 @@ function GettingStarted() {
 
     const checkAuth = async () => {
         try {
-            await axios.get("http://localhost:7777/checkAuth", { withCredentials: true });
+            await axios.get("https://meditrack-bw3b.onrender.com/checkAuth", { withCredentials: true });
             setCanGetUsername(true);
         } catch (err) {
             dispatch(setUsername(""));

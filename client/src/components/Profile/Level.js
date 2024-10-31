@@ -32,7 +32,7 @@ function Level({ userLevel }) {
 
     const getMinutes = async () => {
         try {
-            let { data } = await axios.get("http://localhost:7777/level/get-career-minutes", { withCredentials: true });
+            let { data } = await axios.get("https://meditrack-bw3b.onrender.com/level/get-career-minutes", { withCredentials: true });
             setMinutes(data)
         } catch (err) {
             console.log('get minutes error frontend', err);

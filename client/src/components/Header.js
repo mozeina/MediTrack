@@ -24,9 +24,9 @@ function Header() {
 
     const cookieCheck = async () => {
         try {
-            await axios.get("http://localhost:7777/checkAuth/", { withCredentials: true });
+            await axios.get("https://meditrack-bw3b.onrender.com/checkAuth/", { withCredentials: true });
             setLoggedIn(true);
-            let username = await axios.get("http://localhost:7777/users/get-username", {withCredentials: true});
+            let username = await axios.get("https://meditrack-bw3b.onrender.com/users/get-username", {withCredentials: true});
             if (username.data.length > 16) {
                 dispatch(setUsername(`${username.data.slice(0, 16)}..`));
             } else {
@@ -50,7 +50,7 @@ function Header() {
 
     const handleActualLogout = async () => {
         try {
-            await axios.get("http://localhost:7777/users/logout", { withCredentials: true });
+            await axios.get("https://meditrack-bw3b.onrender.com/users/logout", { withCredentials: true });
             hideLogoutForm();
             dispatch(setUsername("")); 
             setTimeout(() => {

@@ -47,7 +47,7 @@ function Session() {
 
   const checkAuth = async () => {
     try {
-      await axios.get("http://localhost:7777/checkAuth", { withCredentials: true });
+      await axios.get("https://meditrack-bw3b.onrender.com/checkAuth", { withCredentials: true });
       return true;
     } catch (err) {
       return false;
@@ -102,7 +102,7 @@ function Session() {
     //so on end session we have to update the lastest session, weekly progress, and monthly progress in the backend 
     try {
       //end session
-      let level = await axios.post("http://localhost:7777/session/end-session", {
+      let level = await axios.post("https://meditrack-bw3b.onrender.com/session/end-session", {
         newMinutes: (elapsedTime / 60).toFixed(2),
         newDate: startTime,
         day: getDay(),

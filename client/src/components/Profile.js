@@ -41,7 +41,7 @@ function Profile() {
 
   const checkAuth = async () => {
     try {
-      await axios.get("http://localhost:7777/checkAuth", { withCredentials: true });
+      await axios.get("https://meditrack-bw3b.onrender.com/checkAuth", { withCredentials: true });
       setCheckLevelTrigger(true);
     } catch (err) {
       navigate("/login");
@@ -52,7 +52,7 @@ function Profile() {
 
   const levelExistsCheck = async () => {
     try {
-      let usersLevel = await axios.get("http://localhost:7777/level/check-level", { withCredentials: true });
+      let usersLevel = await axios.get("https://meditrack-bw3b.onrender.com/level/check-level", { withCredentials: true });
       if (!usersLevel.data) {
         navigate("/getting-started");
       } else {

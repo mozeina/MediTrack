@@ -49,7 +49,7 @@ describe("sign up", () => {
         });
 
         it("shows success message on successful registration", async () => {
-            mock.onPost("http://localhost:7777/users/register").reply(201, { "message": "test" });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/register").reply(201, { "message": "test" });
 
             act(() => {
                 render(
@@ -111,7 +111,7 @@ describe("sign up", () => {
         })
 
         it("shows error when username is less than 3 characters ", async () => {
-            mock.onPost("http://localhost:7777/users/register").reply(400, { "errors": [{ msg: "bad username" }] });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/register").reply(400, { "errors": [{ msg: "bad username" }] });
 
             act(() => {
                 render(
@@ -138,7 +138,7 @@ describe("sign up", () => {
         })
 
         it("shows error when email is an invalid email format", async () => {
-            mock.onPost("http://localhost:7777/users/register").reply(400, { "errors": [{ msg: "INVALID EMAIL" }] });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/register").reply(400, { "errors": [{ msg: "INVALID EMAIL" }] });
 
             act(() => {
                 render(
@@ -166,7 +166,7 @@ describe("sign up", () => {
         })
 
         it("shows error when password is less than 6 characters OR has spaces", async () => {
-            mock.onPost("http://localhost:7777/users/register").reply(400, { "errors": [{ msg: "NO SPACES IN PASSWORD" }, { msg: "LONGER PASSWORD" }] });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/register").reply(400, { "errors": [{ msg: "NO SPACES IN PASSWORD" }, { msg: "LONGER PASSWORD" }] });
 
             act(() => {
                 render(
@@ -196,7 +196,7 @@ describe("sign up", () => {
         })
 
         it("shows all http request errors at once/together", async () => {
-            mock.onPost("http://localhost:7777/users/register").reply(400, { "errors": [{ msg: "NO SPACES IN PASSWORD" }, { msg: "LONGER PASSWORD" }, { msg: "LONGER USERNAME" }, { msg: "PROPER EMAIL" }] });
+            mock.onPost("https://meditrack-bw3b.onrender.com/users/register").reply(400, { "errors": [{ msg: "NO SPACES IN PASSWORD" }, { msg: "LONGER PASSWORD" }, { msg: "LONGER USERNAME" }, { msg: "PROPER EMAIL" }] });
 
              let HeaderContextProvider = ({ children }) => {
                 let [headerUpdate, setHeaderUpdate] = useState(false);

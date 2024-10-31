@@ -50,8 +50,8 @@ describe("Getting started", () => {
 
         it("shows welcome message after login when user's level is not set", async () => {
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "mesasge": "authorized" });
-            mock.onGet("http://localhost:7777/users/get-username").reply(200, "yay nice username");
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "mesasge": "authorized" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/users/get-username").reply(200, "yay nice username");
 
             render(
                 <Provider store={store}>
@@ -71,8 +71,8 @@ describe("Getting started", () => {
 
         it("shows description of beginner level when beginner is selected", async () => {
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "mesasge": "authorized" });
-            mock.onGet("http://localhost:7777/users/get-username").reply(200, "yay nice username");
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "mesasge": "authorized" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/users/get-username").reply(200, "yay nice username");
 
             render(
                 <Provider store={store}>
@@ -98,8 +98,8 @@ describe("Getting started", () => {
 
         it("shows description of experienced level when experienced is selected", async () => {
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "mesasge": "authorized" });
-            mock.onGet("http://localhost:7777/users/get-username").reply(200, "yay nice username");
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "mesasge": "authorized" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/users/get-username").reply(200, "yay nice username");
 
             render(
                 <Provider store={store}>
@@ -124,8 +124,8 @@ describe("Getting started", () => {
 
         it("shows description of monk level when monk is selected", async () => {
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "mesasge": "authorized" });
-            mock.onGet("http://localhost:7777/users/get-username").reply(200, "yay nice username");
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "mesasge": "authorized" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/users/get-username").reply(200, "yay nice username");
 
             render(
                 <Provider store={store}>
@@ -151,11 +151,11 @@ describe("Getting started", () => {
 
         it("redirects to /profile on button click (profile access conditions are fulfilled)", async () => {
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "mesasge": "authorized" });
-            mock.onGet("http://localhost:7777/users/get-username").reply(200, "yay nice username");
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "mesasge": "authorized" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/users/get-username").reply(200, "yay nice username");
 
             //for profile component
-            mock.onGet("http://localhost:7777/level/check-level").reply(200, "yay we got a level");
+            mock.onGet("https://meditrack-bw3b.onrender.com/level/check-level").reply(200, "yay we got a level");
 
             let mockSetLevelUp = jest.fn();
 

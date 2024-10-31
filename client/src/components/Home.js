@@ -20,7 +20,7 @@ function Home() {
 
   const checkLoggedIn = async () => {
     try {
-      await axios.get("http://localhost:7777/checkAuth", { withCredentials: true });
+      await axios.get("https://meditrack-bw3b.onrender.com/checkAuth", { withCredentials: true });
       navigate("/profile");
     } catch (err) {
       return;

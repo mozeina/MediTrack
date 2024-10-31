@@ -72,7 +72,7 @@ describe("Session", () => {
             mock.reset();
         })
         it("redirects to login if user isnt signed in when trying to start a session", async () => {
-            mock.onGet("http://localhost:7777/checkAuth").reply(401, { "message": "unauthorized" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(401, { "message": "unauthorized" });
 
             render(
                 <LevelUpContext.Provider value={{ setLevelUp: mockSetLevelUp }}>
@@ -104,7 +104,7 @@ describe("Session", () => {
         })
 
         it("starts a session on click of start a session if user is authorized", async () => {
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "message": "authorzied" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "message": "authorzied" });
             render(
                 <LevelUpContext.Provider value={{ setLevelUp: mockSetLevelUp }}>
 
@@ -135,7 +135,7 @@ describe("Session", () => {
         });
 
         it("cancels session when session starts then cancel then confirm cancel", async () => {
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "message": "authorzied" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "message": "authorzied" });
             render(
                 <LevelUpContext.Provider value={{ setLevelUp: mockSetLevelUp }}>
 
@@ -190,7 +190,7 @@ describe("Session", () => {
         })
 
         it("does not cancel session when user pauses then cancels then does NOT confirm cancel", async () => {
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "message": "authorzied" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "message": "authorzied" });
             render(
                 <LevelUpContext.Provider value={{ setLevelUp: mockSetLevelUp }}>
                     <ErrorDivContext.Provider value={{ setError: mockSetError }}>
@@ -244,7 +244,7 @@ describe("Session", () => {
         })
 
         it("pause play button works as intended", async () => {
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "message": "authorzied" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "message": "authorzied" });
             render(
                 <LevelUpContext.Provider value={{ setLevelUp: mockSetLevelUp }}>
                     <ErrorDivContext.Provider value={{ setError: mockSetError }}>
@@ -306,8 +306,8 @@ describe("Session", () => {
                 );
             };
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "message": "authorized" });
-            mock.onPost("http://localhost:7777/session/end-session").reply(500, { "error": "server error" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "message": "authorized" });
+            mock.onPost("https://meditrack-bw3b.onrender.com/session/end-session").reply(500, { "error": "server error" });
 
             // Use the custom provider with real state
             render(
@@ -354,11 +354,11 @@ describe("Session", () => {
         test("successful end session navigates to profile", async () => {
 
 
-            mock.onGet("http://localhost:7777/checkAuth").reply(200, { "message": "authorzied" });
+            mock.onGet("https://meditrack-bw3b.onrender.com/checkAuth").reply(200, { "message": "authorzied" });
             //mock end session query
-            mock.onPost("http://localhost:7777/session/end-session").reply(201, { "message": "end session succesful" });
+            mock.onPost("https://meditrack-bw3b.onrender.com/session/end-session").reply(201, { "message": "end session succesful" });
             //mock all queries of profile
-            mock.onGet("http://localhost:7777/level/check-level").reply(200, "1");
+            mock.onGet("https://meditrack-bw3b.onrender.com/level/check-level").reply(200, "1");
 
 
             render(
