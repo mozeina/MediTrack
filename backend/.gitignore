@@ -2,3 +2,5 @@
 
 #enviromental variables
 .env
+.env.test
+ 
