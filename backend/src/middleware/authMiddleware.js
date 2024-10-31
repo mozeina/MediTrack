@@ -17,6 +17,7 @@ const checkAuth = async (req, res) => {
         req.userId = decoded.userId;
         return res.status(200).json({ "message": "authorized!" });
     } catch (err) {
+        console.error("check authorization error:", err);
         return res.status(500).json({ "error": "Unable to authorize." });
     }
 }
@@ -33,6 +34,7 @@ const authenticateToken = async (req, res, next) => {
         req.userId = decoded.userId;
         next();
     } catch (err) {
+        console.error("token authorization error", err);
         return res.stattus(500).json({ "error": "Unable to authorize." });
     }
 }
