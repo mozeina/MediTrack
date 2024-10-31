@@ -60,6 +60,7 @@ function Login() {
             } else {
                 setFormError("Internal server error.");
             }
+            console.error("we have a login error", err);
         }
 
     }
