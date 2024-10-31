@@ -78,6 +78,7 @@ const login = async (req, res) => {
         }).json({ "message": "Logged In Successfully" });
 
     } catch (err) {
+        console.error("login backend error", err);
         return res.status(500).json({ "error": "Internal server error" });
     };
 };
