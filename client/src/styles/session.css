@@ -1,0 +1,408 @@
+.session-background {
+    height: 700px;
+    position: relative;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.timer {
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    -webkit-user-select: none;
+    letter-spacing: 3px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 100px;
+    height: 70%;
+    padding-top: 50px;
+    transition: box-shadow .3s ease-in;
+    position: relative;
+
+}
+
+.timer h1 {
+    font-size: 9rem;
+}
+
+.timer-controls {
+    margin-top: 50px;
+}
+
+.timer-controls>* {
+    display: inline-block;
+}
+
+#start-session-button {
+    border: none;
+    background: #2D1C2E;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: background .2s ease-in, left .1s ease, top .1s ease, box-shadow .2s ease;
+    position: relative;
+    z-index: 100;
+    letter-spacing: 2px;
+}
+
+.shrinkInwards {
+    animation: shrinkInwards .5s ease;
+    font-size: 0;
+}
+
+@keyframes shrinkInwards {
+    0% {
+        /* transform: scaleX(1); */
+        opacity: 1
+    }
+
+    p 100% {
+        /* transform: scaleX(0); */
+        opacity: 0;
+    }
+}
+
+#start-session-button:hover {
+    background: black;
+    box-shadow: 0 0 5px 2px white;
+}
+
+#start-session-button:active {
+    background: #722885;
+    position: relative;
+    /* top: 1px;
+    left: 1px; */
+}
+
+
+
+.glow::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 20px #be0b7a solid;
+    filter: blur(10px);
+    box-shadow: 0 0 40px 30px #ce4198;
+    border-radius: 100px;
+    animation: fadeIn .5s ease;
+}
+
+
+.timer-controls>p {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    background-color: black;
+    box-shadow: 0 0 5px 2px white;
+    border: none;
+    transition: box-shadow .2s ease, background-color .2s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+#pause-play.play::before {
+    content: "";
+    position: absolute;
+    /* background-color: red; */
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    width: 18%;
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#pause-play.pause::before {
+    content: "";
+    position: absolute;
+    /* border-left: 2px solid white;
+    border-right: 2px solid white; */
+    border-left: 20px solid white;
+    border-top: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    width: 1px;
+    height: 1px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-25%) translateY(-50%);
+
+}
+
+
+
+
+#end-session {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    letter-spacing: 1px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 5px 2px white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity .3s ease-in, background-color, .2s ease, box-shadow .2s ease;
+}
+
+#end-session.end-session-visible {
+    opacity: 1;
+}
+
+
+#arrow-clockwise,
+#x-lg {
+    position: absolute;
+    font-size: 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+
+
+
+
+#end-session:hover,
+#reset-timer:hover,
+#pause-play:hover,
+#cancel-session:hover,
+.cancel-confirmation-form p:hover {
+    background-color: #2D1C2E;
+    box-shadow: 0 0 8px 4px white;
+}
+
+#reset-timer:active {
+    background-color: #B1267C;
+    box-shadow: 0 0 10px 6px white;
+}
+
+#end-session:active,
+#cancel-confirmation-form-confirm:active {
+    background-color: rgb(2, 179, 2);
+    box-shadow: 0 0 10px 6px white;
+}
+
+#pause-play:active {
+    background-color: #B1267C;
+    box-shadow: 0 0 10px 6px white;
+}
+
+#cancel-session:active,
+#cancel-confirmation-form-cancel:active {
+    background-color: red;
+    box-shadow: 0 0 10px 6px white;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.cancel-confirmation {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    width: 98%;
+    height: 98%;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    z-index: 0;
+    border-radius: 75px;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+}
+
+.cancel-confirmation::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 20px #be0b7a solid;
+    filter: blur(10px);
+    box-shadow: 0 0 40px 30px #ce4198;
+    border-radius: 100px;
+    animation: fadeIn .5s ease;
+}
+
+.cancel-confirmation-form {
+    position: relative;
+    z-index: 6;
+    background-color: transparent;
+    width: 60%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(50px);
+    transform: translateX(-50%) translateY(-50%);
+    border: 1px solid black
+}
+
+.cancel-confirmation-form h4 {
+    letter-spacing: 1px;
+    font-size: 1.225rem;
+    position: relative;
+    top: 50px;
+    z-index: 7;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.cancel-confirmation-form p {
+    position: relative;
+    top: 100px;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 5px 2px white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color, .2s ease, box-shadow .2s ease;
+}
+
+.visibleIndexed {
+    opacity: 1;
+    z-index: 5
+}
+
+@keyframes fadeIn {
+
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* different viewports */
+
+@media screen and (min-width: 1001px) and (max-width: 1600px) {
+    .timer {
+        width: 65%;
+    }
+
+    .timer h1 {
+        font-size: 8rem;
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+    .timer h1 {
+        font-size: 7rem;
+        margin-top: 40px;
+    }
+
+    .timer {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .timer {
+        padding-top: 50px;
+        margin-top: 0;
+        width: 75%;
+    }
+
+    .timer h1 {
+        font-size: 5rem;
+        margin-top: 40px;
+    }
+
+    .session-background {
+        padding-top: 100px;
+    }
+
+    .glow::before {
+        box-shadow: 0 0 40px 10px #ce4198;
+
+    }
+
+    .timer-controls>p {
+        width: 60px;
+        height: 60px;
+    }
+
+    #arrow-clockwise,
+    #x-lg {
+        font-size: 2rem;
+    }
+
+    #end-session {
+        font-size: 1.225rem;
+    }
+
+    .cancel-confirmation::before {
+        content: "";
+        position: absolute;
+        top: -3%;
+        left: -3%;
+        width: 98%;
+        height: 98%;
+        border: 20px #be0b7a solid;
+        filter: blur(10px);
+        box-shadow: 0 0 10px 10px #ce4198;
+
+    }
+
+    .cancel-confirmation-form {
+        width: 80%;
+        left: 50.5%
+    }
+
+    .cancel-confirmation-form > p {
+        top: 75px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .timer {
+        width: 75%;
+    }
+    .timer h1 {
+        font-size: 3rem;
+    }
+    .cancel-confirmation-form {
+        width: 110%;
+        height: 55%;
+    }
+    .timer-controls > p {
+        width: 55px;
+        height: 55px;
+    }
+    
+    #arrow-clockwise,
+    #x-lg {
+        font-size: 1.7rem;
+    }
+
+}

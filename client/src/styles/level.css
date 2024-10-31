@@ -1,0 +1,50 @@
+.level-div {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.level-div>* {
+    margin: 10px auto;
+}
+
+.level-progress-bar {
+    background-color: black;
+    width: 90%;
+    height: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.level-progress-bar::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    border-radius: 10px;
+    width: var(--progress-width, 0);
+    height: 60%;
+    background: linear-gradient(#ad2687, #753062, #2F1A29);
+    z-index: 5; 
+    transform-origin: left;
+    animation: comeIn 1.5s ease-out forwards;
+}
+
+#level-progress-minutes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 6;
+    width: 100%;
+    font-size: .9rem;
+}
+
+@keyframes comeIn {
+    0% {
+        transform: scaleX(0)  translateY(-50%);
+    }
+
+    100% {
+        transform: scaleX(1)  translateY(-50%);
+    }
+}

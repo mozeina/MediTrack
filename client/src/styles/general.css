@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    height: 100px;
+    z-index: 1002;
+}
+
+.main-background {
+    background: linear-gradient(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93)), url("../images/meditation-beach-blue-sky.jpg");
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+
+.main-background .merriweather {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.nunito-sans {
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+li,
+button {
+    -webkit-user-select: none;
+}
+
+
+.error-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+}
+
+.error-form {
+    width: 30%;
+    height: 30%;
+    background-color: rgb(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    border: 1px solid black;
+    border-radius: 50px;
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    color: white;
+    animation: fadeIn .3s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.error-form p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+#error-div-paragraph {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 75px;
+}
+
+.error-button {
+    background-color: black;
+    color: white;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 5px 2px white;
+    border-radius: 5px;
+    -webkit-user-select: none;
+    margin-top: 50px;
+    opacity: 1;
+    transition: opacity .3s ease-in, background-color, .2s ease, box-shadow .2s ease;
+}
+
+.error-button:hover {
+    background-color: #2D1C2E;
+    box-shadow: 0 0 8px 4px white;
+}
+
+.error-button:active {
+    background-color: red;
+    box-shadow: 0 0 10px 6px white;
+}
+
+@media screen and (max-width: 1100px) {
+    .error-form {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .error-form {
+        top: 65%;
+    }
+}

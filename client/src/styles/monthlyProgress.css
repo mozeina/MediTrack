@@ -1,0 +1,49 @@
+.monthly-progress-graph {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+}
+
+.monthly-progress-graph>div {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    justify-content: end;
+    margin: 0px 0px;
+    -webkit-user-select: none;
+}
+
+.monthly-progress-graph>div>* {
+    margin: 10px 0;
+}
+
+.month-progress-bar {   
+    border-radius: 3px;
+    background: linear-gradient(#ad2687, #753062, #2F1A29);
+    width: 40px;
+    margin: 0 auto;
+    align-self: center;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    position: relative;
+    animation: growUpwards 1.5s ease-out forwards;
+    border: 1px solid black;
+}
+
+@keyframes growUpwards {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+
+@media screen and (max-width: 1600px) {
+    .monthly-progress-graph > div > * {
+        margin: 5px 0;
+    }
+
+}

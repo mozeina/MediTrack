@@ -1,0 +1,456 @@
+.small-loader {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* 
+        align-items: start; 
+    */
+}
+
+.small-loader::after {
+    position: relative;
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 5px solid #ddd;
+    border-top-color: rgb(128, 16, 72);
+    border-radius: 50%;
+    animation: loading .75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+.profile-component {
+    color: white;
+    padding-top: 50px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.grid-container {
+    background: transparent;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 20px;
+    /* grid-template-columns: ; */
+    grid-template-rows: repeat(9, 75px);
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.grid-container>* {
+    align-content: center;
+    text-align: center
+}
+
+
+.username-dashboard {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/green.jpg");
+
+    border: 4px solid black;
+    box-sizing: border-box;
+    grid-area: 1 / 1 / 2 / 3;
+    letter-spacing: 1px;
+}
+
+.username-dashboard h3 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.start-a-session {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/green.jpg");
+    border: 4px solid black;
+    box-sizing: border-box;
+    grid-area: 2 / 1 / 5 / 3;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    position: relative;
+    letter-spacing: 1px;
+    -webkit-user-select: none;
+}
+
+.start-a-session::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/meditrack-header-background.jpg");
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .2s ease-in;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.start-a-session::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(173, 38, 135, 0.5), rgba(0, 80, 24, 0.5)),
+        url("../images/meditrack-header-background.jpg");
+    z-index: 9;
+    opacity: 0;
+    transition: opacity .2s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.start-a-session:hover::before {
+    opacity: 1;
+}
+
+.start-a-session:active::after {
+    opacity: 1
+}
+
+.start-a-session h3 {
+    z-index: 10;
+    position: relative;
+}
+
+.weekly-progress {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/green.jpg");
+
+    border: 4px solid black;
+    box-sizing: border-box;
+    grid-area: 1 / 3 / 5 / -1;
+}
+
+.monthly-progress {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/green.jpg");
+
+    border: 4px solid black;
+    box-sizing: border-box;
+    grid-area: 5 / 4 / -2 / 8;
+    position: relative;
+}
+
+.upcoming-challenge {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/green.jpg");
+
+    border: 4px solid black;
+    box-sizing: border-box;
+    grid-area: 5 / 8 / -2 / -1;
+    position: relative;
+}
+
+.upcoming-challenge h3 {
+    position: absolute;
+    top: 20px;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.latest-session {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/green.jpg");
+    border: 4px solid black;
+    box-sizing: border-box;
+    grid-area: 5 / 1 / -2 / 4;
+}
+
+.relative {
+    position: relative;
+}
+
+.relative h3 {
+    letter-spacing: 1px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+
+/* LATEST SESSION CLASSES  */
+
+.latest-session p {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.latest-session-success {
+    -webkit-user-select: none;
+    display: inline-block;
+    margin: 0 auto;
+
+}
+
+.latest-session-minutes-number {
+    font-size: 4rem;
+    font-weight: 900;
+    display: inline-block;
+}
+
+.latest-session-minutes-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.latest-session-date {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* congrats section  */
+.congrats {
+    color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    background-image: url("../images/meditrack-header-background.jpg");
+    width: 600px;
+    height: 300px;
+    z-index: 100;
+    opacity: 0;
+    text-align: center;
+    box-shadow: 0 0 40px 30px white;
+    border-radius: 10px;
+    backdrop-filter: blur(20px);
+    transition: opacity .2s ease-in;
+    border: 1px solid white;
+}
+
+.congrats::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+    filter: blur(3px);
+    left: -2.5px;
+    top: -2.5px;
+    border-radius: 10px;
+    border:  10px solid rgb(255, 255, 255);
+    
+}
+.congrats-contents {
+    position: absolute;
+    top: 20%;
+    -webkit-user-select: none;
+    letter-spacing: 1px;
+}
+
+.congrats-contents > h3 {
+    font-size: 1.4rem;
+}
+
+.congrats-contents > p {
+    width: 85%;
+    margin: 10px auto;
+    font-size: 1rem;
+
+}
+
+/* button is error-button class, but here are some id edits*/
+#close-button {
+    margin-top: 10px;
+    font-size: 1.15rem;
+}
+
+/*-----*/
+
+.visible {
+    opacity: 1;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1275px) {
+
+    .username-dashboard {
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    .start-a-session {
+        grid-area: 2 / 1 / 5 / 4;
+    }
+
+    .weekly-progress {
+        grid-area: 1 / 4 / 5 / -1;
+    }
+
+    .monthly-progress {
+        grid-area: 5 / 4 / -2 / 8;
+    }
+
+    .upcoming-challenge {
+        grid-area: 5 / 8 / -2 / -1;
+    }
+
+    .latest-session {
+        grid-area: 5 / 1 / -2 / 4;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 899px) {
+    .username-dashboard {
+        grid-area: 1 / 1 / 4 / 5;
+    }
+
+    .start-a-session {
+        grid-area: 1 / 5 / 4 / -1;
+
+    }
+
+    .weekly-progress {
+        grid-area: 4 / 4 / 7 / -1;
+    }
+
+    .monthly-progress {
+        grid-area: 7 / 1 / -1 / 7;
+    }
+
+    .upcoming-challenge {
+        grid-area: 7 / 7 / -1 / -1;
+    }
+
+    .latest-session {
+        grid-area: 4 / 1 / 7 / 4;
+    }
+
+}
+
+@media screen and (min-width: 521px) and (max-width: 699px) {
+
+    .grid-container {
+        grid-template-rows: repeat(12, 75px);
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    .username-dashboard {
+        grid-area: 1 / 1 / 4 / 5;
+    }
+
+    .username-dashboard h3 {
+        font-size: .9rem;
+    }
+
+    .start-a-session {
+        grid-area: 1 / 5 / 4 / -1;
+
+    }
+
+    .weekly-progress {
+        grid-area: 4 / 1 / 7 / -1;
+    }
+
+    .monthly-progress {
+        grid-area: 7 / 4 / 10 / -1;
+    }
+
+    .upcoming-challenge {
+        grid-area: 10 / 2 / -1 / -2;
+    }
+
+    .latest-session {
+        grid-area: 7 / 1 / 10 / 4;
+
+    }
+
+    .latest-session h3 {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+    .latest-session-success {
+        margin-top: 25px;
+    }
+
+
+}
+
+@media screen and (max-width: 520px) {
+    .grid-container {
+        grid-template-rows: repeat(20, 75px);
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    .username-dashboard {
+        grid-area: 1 / 1 / 2 / -1;
+    }
+
+    .start-a-session {
+        grid-area: 2 / 1 / 5 / -1;
+
+    }
+
+    .latest-session {
+        grid-area: 5 / 1 / 9 / -1;
+    }
+
+    .weekly-progress {
+        grid-area: 9 / 1 / 14 / -1;
+    }
+
+    .monthly-progress {
+        grid-area: 14 / 1 / 18 / -1;
+    }
+
+    .upcoming-challenge {
+        grid-area: 18 / 2 / -1 / -2;
+    }
+
+    .relative h3 {
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* latest-session smaller viewport  */
+
+@media screen and (max-width: 899px) {
+    .latest-session-minutes-number {
+        font-size: 3rem;
+    }
+
+    .latest-session-minutes-text {
+        font-size: 1.225rem;
+    }
+
+    .latest-session-date {
+        font-size: .9rem;
+    }
+}
+
+/* level up for smaller viewport  */
+
+@media screen and (max-width: 800px) {
+    .congrats {
+        height: auto;
+        width: 75%;
+        transform: translateY(-30%) translateX(-50%);
+    }
+
+    .congrats-contents {
+        position: relative;
+        top: 0;
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+}

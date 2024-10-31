@@ -1,0 +1,300 @@
+.home {
+    color: white;
+}
+
+.home header {
+    background: none;
+    height: auto;
+    position: static;
+    width: 100%;
+    border-bottom: none;
+}
+
+.home * {
+    letter-spacing: 1px;
+}
+.site-heading {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 75px;
+    font-family: "Merriweather", serif;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+    line-height: 1.5;
+}
+
+.getting-started {
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*THIS WAS PUT BEFORE .VISBILE SO THE TRANSITION WOULD WORK*/
+.track-and-record {
+    padding-top: 150px;
+    opacity: 0;
+    text-align: center;
+}
+
+.track-and-record, .home-progress, .move-up-levels, .register-or-login {
+    transition: opacity 1s ease-in;
+}
+
+.track-and-record > * {
+    margin-bottom: 50px;
+}
+
+#home-stopwatch {
+    width: 300px;
+    -webkit-user-select: none;
+
+}
+
+
+
+#getting-started-header {
+    text-align: center;
+}
+
+#choose-your-level {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.starting-levels {
+    margin: 0 auto;
+    margin-top: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+
+.starting-levels>* {
+    width: 300px;
+    height: 300px;
+    margin: 0 75px;
+    background-color: transparent;
+    transform: rotate(45deg);
+    background-image: url("../images/meditrack-header-background.jpg");
+    -webkit-user-select: none;
+    transition: width .3s ease, height .3s ease, font-size .3s ease;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5);
+}
+
+.beginner img,
+.experienced img,
+.monk img {
+    width: 60%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    transform: rotate(-45deg);
+}
+
+
+
+.beginner h3,
+.experienced h3,
+.monk h3 {
+    text-align: center;
+    transform: rotate(-45deg);
+    position: relative;
+    left: 40px;
+    bottom: 30px;
+    transition: left ease .3s, bottom ease .3s, font-size ease .3s;
+}
+
+.beginner p,
+.experienced p,
+.monk p {
+    text-align: center;
+    transform: rotate(-45deg);
+    position: relative;
+    left: 115px;
+    bottom: 30px;
+    transition: left ease .3s, bottom ease .3s, font-size ease .3s;
+    width: 75%;
+}
+
+#according {
+    text-align: center;
+    width: 90%;
+    margin: 175px auto 0 auto;
+}
+
+
+.home-progress {
+    padding-top: 75px;
+    text-align: center;
+    opacity: 0;
+}
+
+.home-progress > *, .move-up-levels > *, .register-or-login > * {
+    margin-bottom: 50px;
+}
+
+.move-up-levels {
+    padding-top: 75px;
+    text-align: center;
+    opacity: 0;
+}
+
+.register-or-login {
+    padding-top: 75px;
+    text-align: center;
+    opacity: 0;
+}
+
+#progress-bars-img {
+    width: 300px;
+}
+
+.red {
+    color: red;
+}
+.visible {
+    opacity: 1;
+}   
+
+@media screen and (min-width: 320px) and (max-width: 399px) {
+    .starting-levels>* {
+        width: 200px;
+        height: 200px;
+        margin: 0;
+    }
+
+    .starting-levels {
+        height: 900px;
+        align-content: space-between;
+    }
+
+    .beginner img,
+    .experienced img,
+    .monk img {
+        margin-top: 20px;
+        margin-left: 20px;
+        transform: rotate(-45deg);
+        width: 50%;
+        height: auto;
+    }
+
+    .beginner h3,
+    .experienced h3,
+    .monk h3 {
+        transform: translateX(45deg);
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .beginner p,
+    .experienced p,
+    .monk p {
+        font-size: .8rem;
+        left: 70px;
+        bottom: 25px;
+    }
+}
+
+
+@media screen and (min-width: 400px) and (max-width: 566px) {
+    .starting-levels {
+        height: 1000px;
+        align-content: space-between;
+    }
+
+    .starting-levels>* {
+        width: 250px;
+        height: 250px;
+        margin: 0;
+    }
+
+    .beginner img,
+    .experienced img,
+    .monk img {
+        width: 50%;
+    }
+
+    .beginner h3,
+    .experienced h3,
+    .monk h3 {
+        transform: translateX(45deg);
+        left: 22px;
+        bottom: 18px;
+    }
+
+    .beginner p,
+    .experienced p,
+    .monk p {
+        font-size: .9rem;
+        left: 80px;
+        bottom: 25px;
+    }
+
+    #according {
+        margin: 100px auto 0 auto;
+    }
+
+}
+
+@media screen and (min-width: 567px) and (max-width: 1128px) {
+    .starting-levels {
+        height: 1300px;
+        align-content: space-between;
+    }
+
+    .beginner p,
+    .experienced p,
+    .monk p {
+        font-size: 1rem;
+        left: 110px;
+        bottom: 35px;
+    }
+}
+
+@media screen and (min-width: 1129px) and (max-width: 1330px) {
+    .getting-started {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    .beginner:hover,
+    .experienced:hover,
+    .monk:hover {
+        width: 350px;
+        height: 350px;
+    }
+
+    .beginner:hover h3,
+    .experienced:hover h3,
+    .monk:hover h3 {
+        left: 45px;
+        bottom: 35px;
+        font-size: 1.4rem;
+
+    }
+
+    .beginner:hover p,
+    .experienced:hover p,
+    .monk:hover p {
+        left: 130px;
+        bottom: 40px;
+        font-size: 1.3rem;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home main {
+        padding-top: 100px;
+    }
+}
