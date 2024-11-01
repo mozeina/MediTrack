@@ -40,7 +40,8 @@ const register = async (req, res) => {
 
         return res.status(201).cookie("auth-token", token, {
             httpOnly: true,
-            secure: false,
+            secure: true,
+            sameSite: "None",
             maxAge: 60 * 60 * 1000 * 12
         }).json({ "message": "User created successfully." });
 
@@ -73,8 +74,9 @@ const login = async (req, res) => {
 
         return res.status(200).cookie("auth-token", token, {
             httpOnly: true,
-            maxAge: 60 * 60 * 1000 * 12,
-            secure: false
+            secure: true,
+            sameSite: "None",
+            maxAge: 60 * 60 * 1000 * 12
         }).json({ "message": "Logged In Successfully" });
 
     } catch (err) {
@@ -87,7 +89,8 @@ const logout = async (req, res) => {
     try {
         res.clearCookie("auth-token", {
             httpOnly: true,
-            secure: false
+            secure: true,
+            sameSite: "None"
         })
         return res.status(200).json({ "message": "logged out successfully!" });
     } catch (err) {
